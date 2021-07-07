@@ -1,0 +1,42 @@
+
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand">
+      {{'title' | translate }}
+    </a>
+    <span class="form-inline">
+      <select class="form-control" #selectedLang (change)="switchLang(selectedLang.value)">
+        <option *ngFor="let language of translate.getLangs()" [value]="language"
+                [selected]="language === translate.currentLang">
+          {{ language }}
+        </option>
+      </select>
+    </span>
+  </div>
+</nav>
+
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label>{{'firstName' | translate}}</label>
+      <input type="text" class="form-control">
+      <small class="text-danger">{{'NameError' | translate}}</small>
+    </div>
+    <div class="form-group">
+      <label>{{'lastName' | translate}}</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>{{'Email' | translate}}</label>
+      <input type="text" class="form-control">
+    </div>
+
+
+
+
+
+
+    <button type="submit" class="btn btn-block btn-danger">{{'Submit' | translate}}</button>
+  </form>
+</div>
