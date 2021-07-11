@@ -8,6 +8,10 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import {FormsModule} from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from "@angular/router";
+import { ListEmployeeComponent } from './components/list-employee/list-employee.component';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
+import { DetailEmployeeComponent } from './components/detail-employee/detail-employee.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -15,7 +19,10 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    CreateEmployeeComponent
+    CreateEmployeeComponent,
+    ListEmployeeComponent,
+    UpdateEmployeeComponent,
+    DetailEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-     AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

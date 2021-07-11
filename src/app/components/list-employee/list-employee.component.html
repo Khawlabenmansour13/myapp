@@ -1,0 +1,69 @@
+
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <h1 style="text-align: center;">Liste des employees</h1>
+
+
+
+  <br>
+  <br>
+  <br>
+  <a routerLink="/create">
+    <button class="btn btn-success">Create Employee</button>
+
+  </a>
+
+
+  <table class = "table table-striped" >
+    <thead>
+    <tr>
+      <th> First Name</th>
+      <th> Last Name </th>
+      <th> Email Id</th>
+      <th> Salaray </th>
+      <th> Actions </th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr *ngFor="let emp of employees ">
+
+      <td>
+        {{emp.firstName}}
+
+      </td>
+
+      <td>
+        {{emp.lastName}}
+
+      </td>
+
+      <td>
+        {{emp.email}}
+
+      </td>
+
+
+      <td>
+        {{emp.salary}}
+
+      </td>
+
+
+    <td>
+
+
+      <button class="btn btn-info"(click)="goToUpdateComponent(emp.id)" >Update</button>
+      <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button>
+      <button class="btn btn-success" (click)="gotoDetailComponent(emp.id)">View</button>
+
+    </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
